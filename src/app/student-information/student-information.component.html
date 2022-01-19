@@ -1,0 +1,598 @@
+<!-- <form [formGroup]="enrollmentReactiveForm" (ngSubmit)= "OnSubmit()">
+      <div fxLayout="column" fxLayoutGap="20px" >
+
+    <div fxLayout="row" fxLayoutGap="" fxLayoutAlign="center" >
+    <div fxLayout="row" fxFlex="95" fxLayoutGap="150px">
+      <div class="field"  fxLayoutGap="15px" fxLayoutAlign=" center" >
+        <mat-label>Program</mat-label>
+        <mat-form-field >
+          <input matInput
+            class="textfield" formControlName="program">
+        </mat-form-field>
+      </div>
+      <div   fxLayoutGap="15px" fxLayoutAlign=" center">
+        <mat-label>Name</mat-label>
+        <mat-form-field >
+        <input matInput
+         class="textfield" formControlName="name">
+      </mat-form-field>
+    </div>
+    <div  fxLayoutGap="15px" fxLayoutAlign=" center" >
+        <mat-label><b>Nature of Admission:</b></mat-label>
+        <mat-form-field >
+        <input matInput
+        >
+      </mat-form-field>
+    </div>
+    </div>
+
+</div>
+
+
+
+    <div fxLayout="row"  fxLayoutAlign="center center" >
+
+     <div fxFlex="95" fxLayoutAlign="" style="background-color: whitesmoke;" >
+        <div fxLayout="row"  >
+
+        <div fxLayout="column" fxLayoutAlign="end " fxLayoutGap="15px">
+
+
+            <div class="secondHalf" fxLayout="row" fxLayoutGap="50px" >
+                <div class="item1"  fxLayoutAlign=" center" fxLayoutGap="15px" fxFlex="30">
+                  <mat-label> <b>Mobile #: </b></mat-label>
+                  <mat-form-field class="formfield">
+                    <span matPrefix>+92-&nbsp; </span>
+
+                    <input type="tel" placeholder="" matInput [textMask]="{mask:phoneMask}" class="textfield"
+                    formControlName="mobile">
+                  </mat-form-field>
+
+                </div>
+                 <div class="item2" fxLayoutAlign=" center" fxLayoutGap="15px" fxFlex="30">
+                  <mat-label><b>CNIC: </b> </mat-label>
+                  <mat-form-field class="formfield">
+                    <span matPrefix>+92-&nbsp; </span>
+                    <input type="tel" placeholder="" matInput [textMask]="{mask:phoneMask}" class="textfield" formControlName="CNIC" >
+                  </mat-form-field>
+                </div>
+                <div class="item3"  fxLayoutAlign=" center" fxLayoutGap="15px" fxFlex="30">
+                  <mat-label><b> Email: </b> </mat-label>
+                  <mat-form-field class="formfield">
+                    <input type="email" matInput
+                    class="textfield" formControlName="email">
+                </mat-form-field>
+
+
+                  </div>
+              </div>
+
+
+
+
+            <div class="secondHalf" fxLayout="row" fxLayoutGap="50px" >
+            <div class="item1"  fxLayoutAlign=" center" fxLayoutGap="15px" fxFlex="30">
+              <mat-label><b>Father Name: </b></mat-label>
+              <mat-form-field class="formfield">
+                <span matPrefix>+92-&nbsp; </span>
+
+                <input type="tel" placeholder="" matInput [textMask]="{mask:phoneMask}" class="textfield"
+                formControlName="fatherName">
+              </mat-form-field>
+
+            </div>
+             <div class="item2" fxLayoutAlign=" center" fxLayoutGap="15px" fxFlex="30">
+              <mat-label><b>Father Mobile#: </b></mat-label>
+              <mat-form-field class="formfield">
+                <span matPrefix>+92-&nbsp; </span>
+                <input type="tel" placeholder="" matInput [textMask]="{mask:phoneMask}" class="textfield" formControlName="fatherMobile" >
+              </mat-form-field>
+            </div>
+            <div class="item3"  fxLayoutAlign=" center" fxLayoutGap="15px" fxFlex="30">
+              <mat-label><b>Father Email:</b> </mat-label>
+              <mat-form-field class="formfield">
+                <input type="email" matInput
+                class="textfield" formControlName="email">
+            </mat-form-field>
+
+
+              </div>
+          </div>
+
+          <div class="secondHalf" fxLayout="row" fxLayoutGap="50px" >
+            <div class="item1"  fxLayoutAlign=" center" fxLayoutGap="15px" fxFlex="30">
+              <mat-label><b>Domicile:city:</b> </mat-label>
+              <mat-form-field class="formfield">
+                <span matPrefix>+92-&nbsp; </span>
+
+                <input type="tel" placeholder="" matInput [textMask]="{mask:phoneMask}" class="textfield"
+                formControlName="domicileCity">
+              </mat-form-field>
+
+            </div>
+             <div class="item2" fxLayoutAlign=" center" fxLayoutGap="15px" fxFlex="30">
+              <mat-label><b>Province: </b></mat-label>
+              <mat-form-field class="formfield">
+                <span matPrefix>+92-&nbsp; </span>
+                <input type="tel" placeholder="" matInput [textMask]="{mask:phoneMask}" class="textfield" formControlName="province" >
+              </mat-form-field>
+            </div>
+            <div class="item3"  fxLayoutAlign=" center" fxLayoutGap="15px" fxFlex="30">
+              <mat-label><b>Quota: </b></mat-label>
+              <mat-form-field class="formfield">
+                <input type="email"
+                 matInput
+                 class="textfield" formControlName="quota">
+
+                </mat-form-field>
+
+              </div>
+          </div>
+
+
+
+        </div>
+        </div>
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        </form> -->
+
+
+<mat-card>
+    <div fxLayout="column" fxLayoutGap="30px">
+
+        <div fxLayout="row" fxLayoutAlign="center ">
+            <div fxLayout="row" fxFlex="95">
+                <div fxLayout="row" fxFlex="25">
+                    {{obj.data.studentId}}
+                </div>
+                <div fxLayout="row" fxFlex="25">
+                    {{obj.data.name}}
+                </div>
+                <div fxLayout="row" fxFlex="25">
+                    <b>Nature of Admission: </b>
+                </div>
+                <div fxLayout="row" fxFlex="25" fxLayoutAlign="end center">
+                    <div fxLayoutGap="20px">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">history</mat-icon>
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">printer</mat-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div fxLayout="row" fxLayoutAlign="center">
+            <div fxLAyout="row" fxFlex=95 fxLayoutGap="20px ">
+
+                <div fxLAyout="row" fxFlex=100>
+                    <div fxLayout="row ">
+                        <div fxLayout="column " fxLayoutGap="20px " fxFlex="100 ">
+                            <div fxLayout="row " fxLayoutGap="100px ">
+
+                                <div fxLayout="row " fxLayoutAlign="space-between center " fxFlex=25>
+                                    <b> Mobile #:</b>
+                                    <div>{{obj.data.mobileNumber}} </div>
+                                </div>
+
+
+
+
+                                <div fxLayout="row " fxFlex=25 fxLayoutAlign="space-between center ">
+                                    <b>CNIC:</b>
+                                    <div>{{obj.data.cnic}} </div>
+                                </div>
+
+                                <div fxLayout="row " fxFlex=25 fxLayoutAlign="space-between center ">
+                                    <b>Email#:</b>
+                                    <div>{{obj.data.email}}
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div fxLayout="row " fxLayoutGap="100px ">
+
+                                <div fxLayout="row " fxLayoutAlign="space-between center " fxFlex=25>
+                                    <b> Father Name:</b>
+                                    <div>{{obj.data.guardianName}} </div>
+                                </div>
+
+
+
+
+                                <div fxLayout="row " fxFlex=25 fxLayoutAlign="space-between center ">
+                                    <b>Father Mobile#:</b>
+                                    <div>{{obj.data.guardianMobileNumber}} </div>
+                                </div>
+
+                                <div fxLayout="row " fxFlex=25 fxLayoutAlign="space-between center ">
+                                    <b>Father Email:</b>
+                                    <div>{{obj.data.guardianEmail}}
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div fxLayout="row " fxLayoutGap="100px ">
+
+                                <div fxLayout="row " fxLayoutGap="180px " fxFlex=25>
+                                    <b> Domicile: City:</b>
+                                    <div>{{obj.data.domicileCity}} </div>
+                                </div>
+
+
+
+
+                                <div fxLayout="row " fxFlex=25 fxLayoutGap="220px ">
+                                    <b>Province:</b>
+                                    <div>{{obj.data.province}} </div>
+                                </div>
+
+                                <div fxLayout="row " fxFlex=25 fxLayoutGap="200px ">
+                                    <b>Quota:</b>
+                                    <div>{{obj.data.admissionTypeQuota}}
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div fxFlex="7" fxLayoutAlign="center" style="background-color: whitesmoke;">
+                    <div fxLayout="row">
+
+                        <div fxLayout="column" fxLayoutAlign="center ">
+
+                            <div>
+                                <img src="../../assets/images/screen-3.jpg" alt="picture" width="120" height="120">
+
+                            </div>
+                            <div class="secondHalf" fxLayout="row" fxLayoutGap="100px">
+                                <div class="item1" fxLayoutAlign="center center">
+
+
+                                </div>
+
+
+
+                            </div>
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="center">
+            <div fxLAyout="row" fxFlex=95 fxLayoutGap="20px " style="background-color: whitesmoke;">
+
+                <div fxLAyout="row" fxFlex=90>
+                    <div fxLayout="row ">
+                        <div fxLayout="column " fxLayoutGap="30px " fxFlex="100 " fxLayoutAlign="end ">
+                            <div fxLayout="row " fxLayoutGap="100px ">
+                                <div fxLayout="column" fxLayoutAlign="end " fxFlex=50>
+                                    <div fxLayout="row " fxLayoutGap="20px " fxFlex=50>
+                                        <div> <b> Campus #:</b></div>
+                                        <div>{{obj.data.campus.campusName}} </div>
+                                    </div>
+
+                                </div>
+
+                                <div fxLayout="column" fxLayoutAlign="end " fxFlex=50>
+                                    <div fxLayout="row " fxFlex=50 fxLayoutGap="20px ">
+                                        <div> <b>Program:</b></div>
+                                        <div>{{obj.data.programDetail.program.name}}-{{obj.data.programDetail.program.name}} </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div fxLayout="row " fxLayoutGap="100px ">
+                                <div fxLayout="column" fxLayoutAlign="start " fxFlex=50>
+                                    <div fxLayout="row " fxFlex=50 fxLayoutGap="20px ">
+                                        <div> <b> Roadmap:</b> </div>
+                                        <div>{{obj.data.roadMap.title}} </div>
+                                    </div>
+
+                                </div>
+
+
+
+                                <div fxLayout="column" fxLayoutAlign="start " fxFlex=50>
+                                    <div fxLayout="row " fxFlex=50 fxLayoutGap="20px ">
+                                        <b>Semester:</b>
+                                        <div>{{obj.data.class.name}} </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex="95">
+
+
+                <div fxLayout="column" fxLayoutGap=20px>
+
+                    <div fxLayout="row" fxLayoutAlign="end">
+
+                        <div fxLayout="row">
+                            <button mat-raised-button color="accent">Active</button>
+                        </div>
+
+
+
+                    </div>
+                    <div fxLAyout="row">
+
+                        <mat-tab-group mat-align-tabs="start">
+                            <mat-tab label="Courses"></mat-tab>
+                            <mat-tab label="Challans"></mat-tab>
+                            <mat-tab label="Transcript"></mat-tab>
+                            <mat-tab label="Admission Details"></mat-tab>
+                        </mat-tab-group>
+                    </div>
+
+                    <div fxLAyout="row">
+                        <div fxFlex=100 fxLayoutGap="20px">
+                            <div fxLAyout="row" fxLayoutGap="50px ">
+                                <div fxLayout="row " fxFlex="25">
+
+
+
+
+                                    <div fxLayout="column " fxLayoutGap="20px ">
+                                        <div fxLayout="row " fxLayoutGap="40px ">
+                                            <th>Course Code</th>
+                                            <th>Course Name</th>
+
+                                        </div>
+
+                                        <tr fxLayout="row " fxLayoutGap="50px " *ngFor=" let x of obj1.courses ">
+                                            <td>{{x?.courseCode}}</td>
+                                            <td>{{x?.courseName}}</td>
+                                        </tr>
+                                        <!-- <tr fxLayout="row " fxLayoutGap="50px ">
+                                        <td>MMA-5202</td>
+                                        <td>Think_Edit_Create |</td>
+
+                                    </tr>
+                                    <tr fxLayout="row " fxLayoutGap="50px ">
+                                        <td>MMA-5203</td>
+                                        <td>Drawing ||</td>
+
+                                    </tr>
+                                    <tr fxLayout="row " fxLayoutGap="50px ">
+                                        <td>MMA-5204</td>
+                                        <td>Introduction To Media Technologies-||</td>
+
+                                    </tr> -->
+
+                                    </div>
+
+                                </div>
+                                <div fxLAyout="row " fxFlex="40 ">
+                                    <div fxLayout="column " fxLayoutGap="20px ">
+                                        <div fxLayout="row " fxLayoutGap="50px ">
+                                            <th>Credit Hours</th>
+                                            <th>Section</th>
+                                            <th>Held Classes</th>
+                                            <th>Present</th>
+                                            <th>Absent</th>
+
+                                        </div>
+
+                                        <tr fxLayout="row " fxLayoutGap="120px " *ngFor=" let x of obj1.courses ">
+                                            <td>{{x?.creditHours}}</td>
+                                            <td>{{x?.section}}</td>
+                                            <td>{{x?.heldClasses}}</td>
+                                            <td>{{x?.present}}</td>
+                                            <td>{{x?.absent}}</td>
+                                        </tr>
+                                        <!-- <tr fxLayout="row " fxLayoutGap="120px ">
+                                        <td>4</td>
+                                        <td>A</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+
+                                    </tr>
+                                    <tr fxLayout="row " fxLayoutGap="120px ">
+                                        <td>4</td>
+                                        <td>A</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+
+                                    </tr>
+                                    <tr fxLayout="row " fxLayoutGap="120px ">
+                                        <td>4</td>
+                                        <td>A</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+
+                                    </tr> -->
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                            <hr>
+
+                            <!-- <div fxLayout="row " fxLayoutGap="150px ">
+                                <th>OverAll Attendance Summary</th>
+                                <th> CreditHours {{addTotalCreditsHours()}} </th>
+                                <th> held {{addTotalHeld()}} </th>
+                                <th>Present {{addTotalPresent()}}</th>
+                                <th>Absent {{addTotalAbsent()}}</th>
+
+                            </div> -->
+                            <div fxLayout="row " fxLayoutGap="100px ">
+
+                                <div fxLayout="row " fxFlex=15>
+                                    <th>OverAll Attendance Summary</th>
+                                </div>
+
+                                <div fxLayout="row " fxFlex=7 fxLayoutGap="10px ">
+                                    <b>CreditHours</b>
+                                    <div> {{addTotalCreditsHours()}} </div>
+                                </div>
+
+
+                                <div fxLayout="row " fxFlex=5 fxLayoutGap="10px ">
+                                    <b>Held</b>
+                                    <div>{{addTotalHeld()}} </div>
+                                </div>
+
+                                <div fxLayout="row " fxFlex=5 fxLayoutGap="10px ">
+                                    <b>Present</b>
+                                    <div>{{addTotalPresent()}}
+                                    </div>
+                                </div>
+                                <div fxLayout="row " fxFlex=5 fxLayoutGap="10px ">
+                                    <b>Absent</b>
+                                    <div>{{addTotalAbsent()}}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- <div fxLayout="column">
+                        <div *ngFor=" let x of obj1.courses ">
+                            <div fxLayout="row">{{x?.courseCode}}</div>
+                        </div>
+                    </div> -->
+
+                    <!-- <div fxLayoutAlign="center " >
+ <div fxFlex="95 "  style="background-color: whitesmoke; " >
+    <div fxLayout="row " >
+
+    <div fxLayout="column " fxLayoutAlign=" " fxLayoutGap="px " >
+
+
+
+        <div class="secondHalf " fxLayout="row " fxLayoutGap="100px " style="background-color: antiquewhite; " >
+            <div class="item1 "  fxLayoutAlign=" center "   style="background-color: aquamarine; ">
+              <b>Mobile #: </b>
+
+            </div>
+             <div class="item2 " fxLayoutAlign=" center " style="background-color: aquamarine; "  >
+              <b>CNIC: </b>
+
+            </div>
+            <div class="item3 "  fxLayoutAlign=" center "  style="background-color: aquamarine; " >
+              <b>Email: </b>
+
+              </div>
+        </div>
+
+
+
+        <div class="secondHalf " fxLayout="row " fxLayoutGap="100px " >
+            <div class="item1 "  fxLayoutAlign=" center " fxLayoutGap="15px " fxFlex="30 ">
+            <b>Father Name: </b>
+            <mat-form-field class="formfield ">
+            </mat-form-field>
+            </div>
+            <div class="item2 " fxLayoutAlign=" center " fxLayoutGap="15px " fxFlex="30 ">
+            <b>Father Mobile#: </b>
+            <mat-form-field class="formfield ">
+            </mat-form-field>
+            </div>
+            <div class="item3 "  fxLayoutAlign=" center " fxLayoutGap="15px " fxFlex="30 ">
+            <b>Father Email: </b>
+            <mat-form-field class="formfield ">
+            </mat-form-field>
+            </div>
+      </div>
+
+            <div class="secondHalf " fxLayout="row " fxLayoutGap="100px ">
+
+              <div class="item1 " fxLayoutAlign=" center " fxLayoutGap="15px " fxFlex="30 " >
+
+                <b>Domicile City:</b>
+                <mat-form-field  >
+                </mat-form-field>
+              </div>
+
+              <div class="item1 " fxLayoutAlign=" center " fxLayoutGap="15px " fxFlex="30 " >
+
+                          <mat-form-field  >
+                </mat-form-field>
+              </div>
+
+              <div class="item1 " fxLayoutAlign=" center " fxLayoutGap="15px " fxFlex="30 " >
+
+                <b>Quota:</b>
+                <mat-form-field>
+
+
+
+
+                </mat-form-field>
+              </div>
+          </div>
+
+
+    </div>
+    </div>
+    </div>
+</div> -->

@@ -1,0 +1,22 @@
+export class StudentCourses{
+    public courses= [{"studentClassCourseId":20251,"courseStatus":"enrol","courseCode":"MMA-5201","courseName":"Multimedia Studio II",
+        "creditHours":4,"section":"A","heldClasses":0,"present":0,"absent":0,"courseAttendances":[]},{"studentClassCourseId":20252,"courseStatus":"enrol",
+        "courseCode":"MMA-5202","courseName":"Think, Edit, Create I","creditHours":4,"section":"A","heldClasses":1,"present":1,"absent":0,
+        "courseAttendances":[{"id":204573,"attendance":1,"date":"2021-12-23T00:00:00.000Z","roadMapCourseId":472,
+        "referenceASSId":null,"updatedAt":"2021-12-23T05:40:10.275Z","attendanceSheet":{"id":20046,"slotFrom":"1970-01-01T09:00:00.000Z",
+        "slotTo":"1970-01-01T15:00:00.000Z"}}]},{"studentClassCourseId":20253,"courseStatus":"enrol","courseCode":"MMA-5203","courseName":"Drawing II",
+        "creditHours":2,"section":"A","heldClasses":0,"present":0,"absent":0,"courseAttendances":[]},{"studentClassCourseId":20254,"courseStatus":"enrol",
+        "courseCode":"MMA-5204","courseName":"Introduction to Media Technologies-II","creditHours":2,"section":"A","heldClasses":6,"present":4,"absent":2,
+        "courseAttendances":[{"id":200013,"attendance":1,"date":"2021-10-15T00:00:00.000Z","roadMapCourseId":474,"referenceASSId":null,
+        "updatedAt":"2021-12-20T10:51:37.236Z","attendanceSheet":{"id":19691,"slotFrom":"1970-01-01T09:00:00.000Z","slotTo":"1970-01-01T12:00:00.000Z"}},
+        {"id":200027,"attendance":1,"date":"2021-11-05T00:00:00.000Z","roadMapCourseId":474,"referenceASSId":null,"updatedAt":"2021-12-20T10:55:52.392Z",
+        "attendanceSheet":{"id":19692,"slotFrom":"1970-01-01T09:00:00.000Z","slotTo":"1970-01-01T12:00:00.000Z"}},{"id":200071,"attendance":1,
+        "date":"2021-11-19T00:00:00.000Z","roadMapCourseId":474,"referenceASSId":null,"updatedAt":"2021-12-20T10:58:06.275Z",
+        "attendanceSheet":{"id":19699,"slotFrom":"1970-01-01T09:00:00.000Z","slotTo":"1970-01-01T12:00:00.000Z"}},{"id":200085,
+        "attendance":2,"date":"2021-11-26T00:00:00.000Z","roadMapCourseId":474,"referenceASSId":null,"updatedAt":"2021-12-20T11:00:03.430Z",
+        "attendanceSheet":{"id":19700,"slotFrom":"1970-01-01T09:00:00.000Z","slotTo":"1970-01-01T12:00:00.000Z"}},{"id":200139,"attendance":2,
+        "date":"2021-12-03T00:00:00.000Z","roadMapCourseId":474,"referenceASSId":null,"updatedAt":"2021-12-20T11:02:47.780Z","attendanceSheet":{"id":19708,
+        "slotFrom":"1970-01-01T09:00:00.000Z","slotTo":"1970-01-01T12:00:00.000Z"}},{"id":200153,"attendance":1,"date":"2021-12-10T00:00:00.000Z",
+        "roadMapCourseId":474,"referenceASSId":null,"updatedAt":"2021-12-20T11:04:00.937Z","attendanceSheet":{"id":19709,"slotFrom":"1970-01-01T09:00:00.000Z",
+        "slotTo":"1970-01-01T12:00:00.000Z"}}]}]
+}

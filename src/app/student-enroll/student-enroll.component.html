@@ -1,0 +1,732 @@
+
+<!-- [formGroup]="changingForm" (ngSubmit)= "submitData()" -->
+<!-- name="form" (ngSubmit)="OnSubmit(MyForm)" #MyForm="ngForm" -->
+
+<div class="Parent" fxLayout="column" fxLayoutGap="50px"  >
+
+    <form [formGroup]="enrollmentReactiveForm" (ngSubmit)= "OnSubmit()">
+    <!-- {{enrollmentReactiveForm |json}} -->
+    
+      <div fxLayout="column" fxLayoutGap="20px">
+    <div class="head" style="background-color:whitesmoke;" >
+      <div class="head2" fxLayout fxLayoutAlign="center center" fxFlex=50% >
+          <h1 style="color:#3f51b5;" >
+       DUBAI <br> UNIVERSITY
+      </h1>
+    </div>
+    </div>
+    <div class="secondpart" >
+    
+      <div class="studentEnroll" fxLayout fxLayoutAlign="center center" >
+        <h2>
+          Student Enrolment Form
+          <hr style="border-bottom: 2px solid black;">
+        </h2>
+      </div>
+    </div>
+    
+    <div fxLayout="row" fxLayoutGap="20px">
+    
+      <div class="field" fxLayoutAlign="end center"  fxLayoutGap="15px" fxFlex="50" >
+        <mat-label>Program Name:&nbsp;</mat-label>
+        <mat-form-field fxFlex="30">
+          <input matInput placeholder= "&nbsp;Ex. Bachelors in Computer Science"
+            class="textfield" formControlName="programName">
+            <mat-error *ngIf ="enrollmentReactiveForm.get('programName')!.invalid">
+              Program name is required
+            </mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="50">
+        <mat-label>Program Code:&nbsp;</mat-label>
+        <mat-form-field fxFlex="30">
+        <input matInput placeholder="&nbsp;Ex. BSCS"
+         class="textfield" formControlName="programCode">
+         <mat-error *ngIf ="enrollmentReactiveForm.get('programName')!.invalid">
+          Program code is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    </div>
+    
+    
+    
+    
+    
+    <div fxLayout="row"  fxLayoutAlign="center center" >
+    <div class="container" fxFlex=90  fxLayoutGap="20px">
+    
+    
+      <div  fxFlex="40" style="background-color: whitesmoke;">
+        <div fxLayout="row" fxLayoutAlign="" >
+        <div class="firstHalf"  fxLayout="column" >
+    
+    
+          <div fxLayout="row" fxLayoutGap="25px" >
+    
+            <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="50" >
+          <mat-label>First Name:</mat-label>
+          <mat-form-field class="formfield"  >
+            <input matInput placeholder=""
+            class="textfield" formControlName="firstName">
+            <mat-hint>Only Aplhabet allowed</mat-hint>
+            <mat-error *ngIf="enrollmentReactiveForm.get('firstName')!.hasError('required')">
+              First name is  <strong>mandatory</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+          <div  class="item2"  fxLayoutAlign=" center" fxLayoutGap="15px" fxFlex="50" >
+            <mat-label>Last Name:</mat-label>
+            <mat-form-field class="formfield" >
+              <input matInput placeholder="" class="textfield"
+               formControlName="lastName">
+              <mat-hint>Only Aplhabet allowed</mat-hint>
+              <mat-error *ngIf ="enrollmentReactiveForm.get('lastName')!.invalid">
+                Please enter valid lastname
+                </mat-error>
+            </mat-form-field>
+          </div>
+      </div>
+    
+          <div class="firstHalf" >
+            <div class="item3" fxLayoutAlign=" center" fxLayoutGap="">
+              <mat-label>Father's Name:</mat-label>
+              <mat-form-field class="formfield" fxFlex="100" >
+                <input matInput placeholder=""
+                class="textfield" formControlName="fatherName"  >
+                <mat-hint>Only Aplhabet allowed</mat-hint>
+                <mat-error *ngIf ="enrollmentReactiveForm.get('fatherName')!.invalid">
+                 Please enter your father name
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+    
+          <div class="firstHalf"  fxLayout="row" fxLayoutGap="25px" >
+    
+            <div class="item5" fxFlex="50" fxLayoutAlign=" center"  fxLayoutGap="50px" >
+              <mat-label>DOB: </mat-label>
+              <mat-form-field class="formfield" >
+                  <input formControlName="DOB" matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" >
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                  <mat-hint>Minimum age limit is 15</mat-hint>
+                  <mat-error *ngIf ="enrollmentReactiveForm.get('DOB')!.invalid">
+                    Please enter your age
+                   </mat-error>
+            </mat-form-field>
+            </div>
+              <div class="item6" fxLayoutAlign=" center" fxFlex="50" fxLayoutGap="15px" >
+                <mat-label>Place of Birth:</mat-label>
+                <mat-form-field class="formfield" >
+                  <input matInput pattern="^[a-zA-Z]*"  placeholder="" class="textfield"
+                   formControlName="placeOfBirth"  >
+                  <!-- <mat-hint>Only Aplhabet allowed</mat-hint> -->
+                  <mat-error *ngIf ="enrollmentReactiveForm.get('placeOfBirth')!.invalid">
+                    Please enter correctly
+                    </mat-error>
+                </mat-form-field>
+              </div>
+    
+          </div>
+        </div>
+    </div>
+      </div>
+    
+    
+      <div fxFlex="60" fxLayoutAlign="center" style="background-color: whitesmoke;" >
+        <div fxLayout="row"  >
+    
+        <div fxLayout="column" fxLayoutAlign="end " fxLayoutGap="15px">
+    
+    
+          <div class="secondHalf" fxLayout="row" fxLayoutGap="100px" >
+            <div class="item1"  fxLayoutAlign="center center">
+              <mat-label>Gender: </mat-label>
+    
+            </div>
+            <!-- *ngFor="let gender of genders" -->
+            <!-- <label for="{{gender.id}}"> {{gender.genderType}} </label> -->
+            <!-- <mat-radio-button required id="{{gender.id}}"
+            value="{{gender.genderType}}" ></mat-radio-button> -->
+            <mat-radio-group fxLayout="row" fxLayoutGap="100px" formControlName="gender" required>
+            <div class="item2" fxLayoutAlign="center center" fxLayoutGap="10px" >
+                <mat-label>Male</mat-label>
+                <mat-radio-button value="1" ></mat-radio-button >
+                  </div>
+                  <div class="item2" fxLayoutAlign="center center" fxLayoutGap="10px" >
+                  <mat-label>Female</mat-label>
+                  <mat-radio-button value="2" ></mat-radio-button>
+                </div>
+              </mat-radio-group>
+    
+            <!-- <div class="item3"  fxLayoutAlign="center center"  fxLayoutGap="10px">
+              <mat-radio-group fxLayoutGap="10px">
+              <mat-label>Female</mat-label>
+              <mat-radio-button value="2" required ></mat-radio-button>
+            </mat-radio-group>
+            </div> -->
+          </div>
+    
+    
+    
+            <div class="secondHalf" fxLayout="row" fxLayoutGap="50px" >
+            <div class="item1"  fxLayoutAlign=" center" fxLayoutGap="15px" fxFlex="30">
+              <mat-label>Telephone: </mat-label>
+              <mat-form-field class="formfield">
+                <span matPrefix>+92-&nbsp; </span>
+    
+                <input type="tel" placeholder="" matInput [textMask]="{mask:phoneMask}" class="textfield"
+                formControlName="telephone">
+    
+                <mat-error *ngIf ="enrollmentReactiveForm.get('telephone')!.invalid && enrollmentReactiveForm.get('telephone')!.touched">
+                Telephone number is required
+                </mat-error>
+                <!-- <mat-error *ngIf="enrollmentReactiveForm.get('telephone')!.hasError('required') && enrollmentReactiveForm.get('telephone')!.invalid">
+                Please enter your <strong> number </strong>
+                </mat-error>
+                 <mat-error *ngIf="enrollmentReactiveForm.get('telephone')!.hasError('valid')">
+                  Please enter a valid number
+                </mat-error> -->
+              </mat-form-field>
+    
+            </div>
+             <div class="item2" fxLayoutAlign=" center" fxLayoutGap="15px" fxFlex="30">
+              <mat-label>Mobile: </mat-label>
+              <mat-form-field class="formfield">
+                <span matPrefix>+92-&nbsp; </span>
+                <input type="tel" placeholder="" matInput [textMask]="{mask:phoneMask}" class="textfield" formControlName="mobile" >
+                <mat-error *ngIf ="enrollmentReactiveForm.get('mobile')!.invalid && enrollmentReactiveForm.get('mobile')!.touched">
+                  Mobile number is required
+                </mat-error>
+                <mat-icon matSuffix>mode_edit</mat-icon>
+              </mat-form-field>
+            </div>
+            <div class="item3"  fxLayoutAlign=" center" fxLayoutGap="15px" fxFlex="30">
+              <mat-label>Email: </mat-label>
+              <mat-form-field class="formfield">
+                <input type="email"
+                 placeholder="&nbsp; Ex. pat@example.com" matInput
+                 class="textfield" formControlName="email">
+    
+                  <mat-error *ngIf="enrollmentReactiveForm.get('email')!.hasError('required')">
+                   Email is <strong>required</strong>
+                 </mat-error>
+                 <mat-error *ngIf="enrollmentReactiveForm.get('email')!.hasError('email')">
+                  Please enter a valid email address
+                </mat-error>
+                 <!-- <mat-error *ngIf="enrollmentReactiveForm.get('email')!.touched" >
+                   email is <strong>required</strong></mat-error>
+                   <mat-error *ngIf="enrollmentReactiveForm.hasError('required')">
+                    Please enter a valid email address
+                  </mat-error> -->
+    
+    
+                </mat-form-field>
+    
+              </div>
+          </div>
+    
+                <div class="secondHalf" fxLayout="row" fxLayoutGap="50px">
+    
+                  <div class="item1" fxLayoutAlign=" center" fxLayoutGap="15px" fxFlex="30" >
+                    <!-- <mat-form-field class="formfield">
+                      <input matInput  placeholder="" class="textfield" formControlName="nationality">
+                      <mat-error *ngIf ="enrollmentReactiveForm.get('nationality')!.invalid && enrollmentReactiveForm.get('nationality')!.touched">
+                        Please enter your nationality
+                      </mat-error>
+                    </mat-form-field> -->
+                    <mat-label>Nationality:</mat-label>
+                    <mat-form-field  >
+                      <!-- <mat-label>States Group</mat-label> -->
+                      <input type="text" matInput formControlName="nationality" 
+                             [matAutocomplete]="autoGroup">
+                        <mat-autocomplete #autoGroup="matAutocomplete">
+                          <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.letter">
+                            <mat-option *ngFor="let name of group.names" [value]="name">
+                              {{name}}
+                            </mat-option>
+                        </mat-optgroup>
+                      </mat-autocomplete>
+                    </mat-form-field>
+                  </div>
+    
+                  <div class="item2" fxLayoutAlign=" center" fxLayoutGap="" fxFlex="30">
+                    <mat-label>State of Domicile:</mat-label>
+                    <mat-form-field class="formfield" fxFlex="100">
+                      <input matInput  placeholder="" class="textfield" formControlName="domicile"> 
+                      <mat-error *ngIf ="enrollmentReactiveForm.get('domicile')!.invalid">
+                        Please enter valid domicile
+                        </mat-error>
+                    </mat-form-field>
+                  </div>
+    
+                  <div class="item3" fxLayoutAlign=" center" fxLayoutGap="15px" fxFlex="30" >
+                    <mat-label>Religion:</mat-label>
+                    <mat-form-field class="formfield">
+                      <input matInput  placeholder="" class="textfield" formControlName="religion"
+                        >
+                        <mat-error *ngIf ="enrollmentReactiveForm.get('religion')!.invalid">
+                        Please enter correctly
+                        </mat-error>
+                        <!-- <mat-hint>enter your valid</mat-hint> -->
+                    </mat-form-field>
+                  </div>
+              </div>
+    
+    
+        </div>
+        </div>
+        </div>
+      </div>
+      </div>
+    
+    
+    
+       <div class="container"  fxLayoutAlign="center">
+        <div style="background-color:whitesmoke" fxLayout="row" fxFlex=90% fxLayoutAlign="" >
+    
+    
+        <div fxLayout="column" fxLayoutAlign="" >
+              <div class="thirdHalf" fxLayout="row" fxLayoutGap="100px">
+    
+                <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="50">
+                  <mat-label >Permanent Address: </mat-label>
+                  <mat-form-field class="formfield" fxFlex="80" >
+                    <input matInput  placeholder=""  class="textfield" formControlName="parmanentAddress"
+                      >
+                      <mat-error *ngIf="enrollmentReactiveForm.get('parmanentAddress')!.invalid">
+                        Permanent address is <strong>required</strong>
+                      </mat-error>
+    
+                  </mat-form-field>
+                </div>
+    
+                <div class="item2" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="50">
+                  <mat-label>Present Address: </mat-label>
+                  <mat-form-field class="formfield" fxFlex="80" >
+                    <input matInput placeholder="" class="textfield" formControlName="presentAddress"
+                     >
+                     <mat-error *ngIf="enrollmentReactiveForm.get('presentAddress')!.invalid">
+                      Present address is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+    
+    
+                <div class="thirdHalf"  fxLayout="row" fxLayoutAlign="" fxLayoutGap="100px">
+                  <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="50">
+                    <mat-label>Father's/Guardian's Occupation: </mat-label>
+                    <mat-form-field class="formfield"fxFlex=80% >
+                      <input matInput  placeholder="" class="textfield" formControlName="guardianOccupation"
+                             >
+                             <mat-error *ngIf ="enrollmentReactiveForm.get('guardianOccupation')!.invalid && enrollmentReactiveForm.get('guardianOccupation')!.touched">
+                              Please enter the occupation
+                            </mat-error>
+                    </mat-form-field>
+                  </div>
+    
+                  <div class="item2"  fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="50">
+                    <mat-label>Guardian's Name:</mat-label>
+                    <mat-form-field class="formfield" >
+                      <input matInput  placeholder="" class="textfield" formControlName="guardianName"
+                         >
+                    </mat-form-field>
+                  </div>
+    
+                  <div class="item3" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="50">
+                    <mat-label>Relationship:</mat-label>
+                    <mat-form-field class="formfield" >
+                      <input matInput  placeholder="" class="textfield" formControlName="relation"
+                         >
+                    </mat-form-field>
+                  </div>
+    
+                  <div class="item4" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="50">
+                    <mat-label>Mobile:</mat-label>
+                    <mat-form-field class="formfield">
+                      <span matPrefix>+92 &nbsp;</span>
+                      <input type="tel"  placeholder="" matInput [textMask]="{mask:phoneMask}" class="textfield" formControlName="guardianMobile" >
+                      <mat-icon matSuffix>mode_edit</mat-icon>
+                      <mat-error *ngIf ="enrollmentReactiveForm.get('guardianMobile')!.invalid && enrollmentReactiveForm.get('guardianMobile')!.touched">
+                        Mobile number is required
+                      </mat-error>
+                     </mat-form-field>
+                    </div>
+                </div>
+        </div>
+    
+    
+    
+        </div>
+        </div>
+    
+    
+    
+    
+         <div class="container" fxLayoutAlign="center center" > 
+    
+          <div style="background-color:whitesmoke;"  fxFlex="90%" fxLayoutAlign="" >
+    
+            <div fxLayout="column" >
+    
+          <div class="forthHalf"  fxLayout="row" fxLayoutGap="100px" >
+    
+            <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+              <h4> Qualification </h4>
+    
+            </div>
+            <div class="item1"  fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+              <h4> Roll No </h4>
+    
+            </div>
+            <div class="item1"  fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+              <h4> Obtained Marks </h4>
+    
+            </div>
+            <div class="item1"fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+              <h4> Division </h4>
+    
+            </div>
+            <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+              <h4> Passing Year </h4>
+    
+            </div>
+            <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+              <h4> Board </h4>
+            </div>
+    
+          </div>
+
+         
+          <div class="Fifth"  fxLayout="row" fxLayoutGap="100px">
+            
+    
+            <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+              <h4> SSC (Matriculation) </h4>
+      
+            </div>
+              <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                <mat-form-field >
+                  <input matInput type="number" placeholder="" class="textfield" name="roll" required >
+                </mat-form-field>
+                </div>
+                <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                  <mat-form-field >
+                    <input matInput type="number" placeholder="" class="textfield" name="marks" required >
+                  </mat-form-field>
+                </div>
+                <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                  <mat-form-field class="formfield">
+                    <mat-select name="Course" required >
+                      <mat-option *ngFor="let division of topics" [value]="division.value" >{{division.viewValue}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                  <mat-form-field >
+                    <input matInput type="number" placeholder="" class="textfield" name="year" required>
+                  </mat-form-field>
+                </div>
+                <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                  <mat-form-field >
+                    <input matInput type="text" placeholder="" class="textfield" name="board" required>
+                  </mat-form-field>
+                  <div formArrayName=record></div>
+                  <div>
+                    <div formArrayName=record></div>
+                    <button mat-icon-button color="primary" type="button" (click)="OnAddRecord()"  > 
+                      <mat-icon>add_circle</mat-icon>
+                    </button>
+                  </div>
+                </div>
+    
+          </div>
+           
+
+          
+    
+    
+          <!-- <div class="Fifth"   fxLayout="row" fxLayoutGap="100px">
+                  <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                    <h4> HSC (Intermediate) </h4></div>
+    
+                    <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                      <mat-form-field >
+                        <input matInput type="number" placeholder="" class="textfield" name="roll" required>
+                      </mat-form-field>
+                    </div>
+                    <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                      <mat-form-field >
+                        <input matInput type="number" placeholder="" class="textfield" name="marks" required>
+                      </mat-form-field>
+                      </div>
+                      <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                        <mat-form-field class="formfield">
+                          <mat-select name="Course" required>
+                            <mat-option name="division" *ngFor="let division of topics" [value]="division.value" >{{division.viewValue}}  </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                      <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                        <mat-form-field >
+                          <input matInput type="number" placeholder="" class="textfield" name="year" required>
+                        </mat-form-field>
+                      </div>
+                      <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                      <mat-form-field >
+                        <input matInput type="text" placeholder="" class="textfield" name="board" required>
+                      </mat-form-field>
+                      </div>
+          </div>
+    
+          <div class="Fifth"  fxLayout="row" fxLayoutGap="100px" >
+            <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+              <h4> BS (Graduation) &nbsp; &nbsp;  </h4></div>
+    
+                          <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                            <mat-form-field >
+                              <input matInput type="number" placeholder="" class="textfield" name="roll" required>
+                            </mat-form-field>
+                          </div>
+                          <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                            <mat-form-field >
+                              <input matInput type="number" placeholder="" class="textfield" name="marks" required>
+                            </mat-form-field>
+                          </div>
+                            <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                              <mat-form-field class="formfield">
+                                <mat-select name="Course" required>
+                                  <mat-option name="division" *ngFor="let division of topics" [value]="division.value" >{{division.viewValue}}</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            </div>
+                            <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                              <mat-form-field >
+                                <input matInput type="number" placeholder="" class="textfield" name="year" required>
+                              </mat-form-field>
+                            </div>
+                            <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                              <mat-form-field >
+                                <input matInput type="text" placeholder="" class="textfield" name="board" required>
+                              </mat-form-field>
+                            </div>
+                          </div>
+    
+    
+    
+    
+    
+            <div class="Fifth"  fxLayout="row" fxLayoutGap="100px" >
+                            <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                              <h4> Any Other Exam  &nbsp; </h4></div>
+    
+                              <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                                <mat-form-field >
+                                  <input matInput type="number" placeholder="" class="textfield" name="roll" required>
+                                </mat-form-field>
+                              </div>
+                              <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                                <mat-form-field >
+                                  <input matInput type="number" placeholder="" class="textfield" name="marks" required>
+                                </mat-form-field>
+                                </div>
+                                <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                                  <mat-form-field class="formfield">
+                                    <mat-select name="Course" required>
+                                      <mat-option name="division" *ngFor="let division of topics" [value]="division.value" >{{division.viewValue}}</mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                                </div>
+                                <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                                  <mat-form-field >
+                                    <input matInput type="number" placeholder="" class="textfield" name="year" required>
+                                  </mat-form-field>
+                                </div>
+                                <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                                <mat-form-field fxFlex=100%>
+                                  <input matInput type="text" placeholder="" class="textfield" name="board" required>
+                                </mat-form-field>
+    
+                                </div>
+                              </div> -->
+                             
+                              <div formArrayName=record>
+         
+                                <div *ngFor="let record of recordControls; let i=index">
+                                  
+                                  <div class="Fifth"  fxLayout="row" fxLayoutGap="100px">
+                            
+                                    <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                                      <h4 *ngIf="i == 0"> HSC (Intermediate) </h4>
+                                      <h4 *ngIf="i == 1"> BS (Graduation) </h4>
+                                      <h4 *ngIf="i == 2"> Any Other Exam  </h4>
+                                     
+                                    </div>
+                        
+                                      <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                                        <mat-form-field >
+                                          <input matInput type="number" placeholder="" name="roll" required >
+                                        </mat-form-field>
+                                        </div>
+                                        <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                                          <mat-form-field >
+                                            <input matInput type="number" placeholder="" class="textfield" name="marks" required >
+                                          </mat-form-field>
+                                        </div>
+                                        <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                                          <mat-form-field class="formfield">
+                                            <mat-select name="Course" required >
+                                              <mat-option *ngFor="let division of topics" [value]="division.value" >{{division.viewValue}}</mat-option>
+                                            </mat-select>
+                                          </mat-form-field>
+                                        </div>
+                                        <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                                          <mat-form-field >
+                                            <input matInput type="number" placeholder="" class="textfield" name="year" required>
+                                          </mat-form-field>
+                                        </div>
+                                        <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                                          <mat-form-field >
+                                            <input matInput type="text" placeholder="" class="textfield" name="board" required>
+                                          </mat-form-field>
+                        
+                                          <button mat-icon-button color="primary" type="button" (click)="OnAddRecord()"  > 
+                                            <mat-icon>add_circle</mat-icon>
+                                          </button>
+
+                                          <button mat-icon-button color="warn" type="button" (click)="OnRemoveRecord()"  > 
+                                            <mat-icon>remove_circle</mat-icon>
+                                          </button>
+                                        </div>
+                                        
+                            
+                                  </div>
+                            
+                                </div>
+                              </div>
+                        
+
+
+
+                        
+                            </div>
+    
+          </div>
+    
+    
+        </div> 
+
+
+
+        <div fxLayout="row"  fxLayoutAlign="end center" >
+             <div fxFlex="10%" fxLayoutAlign="start center" >
+               <button mat-raised-button color="primary" [disabled]="enrollmentReactiveForm.invalid" (Click)="OnSubmit()"> Submit</button>
+              </div>
+        </div>
+    
+        </div>
+        </form>
+    
+    
+    </div>
+    
+
+
+
+
+
+
+
+
+        <!-- <div class="Fifth"  fxLayout="row" fxLayoutGap="100px">
+    
+          <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+            <h4> SSC (Matriculation) </h4></div>
+            <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+              <mat-form-field >
+                <input matInput type="number" placeholder="" class="textfield" name="roll" required >
+              </mat-form-field>
+              </div>
+              <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                <mat-form-field >
+                  <input matInput type="number" placeholder="" class="textfield" name="marks" required >
+                </mat-form-field>
+              </div>
+              <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                <mat-form-field class="formfield">
+                  <mat-select name="Course" required >
+                    <mat-option *ngFor="let division of topics" [value]="division.value" >{{division.viewValue}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                <mat-form-field >
+                  <input matInput type="number" placeholder="" class="textfield" name="year" required>
+                </mat-form-field>
+              </div>
+              <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                <mat-form-field >
+                  <input matInput type="text" placeholder="" class="textfield" name="board" required>
+                </mat-form-field>
+                <div formArrayName=record></div>
+                <div>
+                  <button mat-icon-button color="primary" type="button" (click)="OnAddRecord()"  > 
+                    <mat-icon>add_circle</mat-icon>
+                  </button>
+                </div>
+              </div>
+  
+        </div> -->
+        <!-- <div formArrayName=record>
+         
+        <div *ngFor="let record of recordControls; let i=index">
+          
+          <div class="Fifth"  fxLayout="row" fxLayoutGap="100px">
+    
+            <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+              <h4 *ngIf="i == 0"> HSC (Intermediate) </h4>
+              <h4 *ngIf="i == 1"> BS (Graduation) </h4>
+              <h4 *ngIf="i == 2"> Any Other Exam  </h4>
+             
+            </div>
+
+              <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                <mat-form-field >
+                  <input matInput type="number" placeholder="" class="textfield" name="roll" required >
+                </mat-form-field>
+                </div>
+                <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                  <mat-form-field >
+                    <input matInput type="number" placeholder="" class="textfield" name="marks" required >
+                  </mat-form-field>
+                </div>
+                <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                  <mat-form-field class="formfield">
+                    <mat-select name="Course" required >
+                      <mat-option *ngFor="let division of topics" [value]="division.value" >{{division.viewValue}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                  <mat-form-field >
+                    <input matInput type="number" placeholder="" class="textfield" name="year" required>
+                  </mat-form-field>
+                </div>
+                <div class="item1" fxLayoutAlign=" center"  fxLayoutGap="15px" fxFlex="15">
+                  <mat-form-field >
+                    <input matInput type="text" placeholder="" class="textfield" name="board" required>
+                  </mat-form-field>
+
+                  <button mat-icon-button color="primary" type="button" (click)="OnAddRecord()"  > 
+                    <mat-icon>add_circle</mat-icon>
+                  </button>
+                </div>
+                
+    
+          </div>
+    
+        </div>
+      </div> -->
+
